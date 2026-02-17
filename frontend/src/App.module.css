@@ -1,0 +1,147 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 4rem;
+}
+
+/* Ambient glow background */
+.bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%, #1db95412 0%, transparent 70%),
+    radial-gradient(ellipse 60% 30% at 80% 80%, #0d6ead08 0%, transparent 60%);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+/* ── Header ── */
+.header {
+  margin-bottom: 2rem;
+  animation-delay: 0ms;
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.tagline {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
+}
+
+/* ── Error ── */
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: #ff446612;
+  border: 1px solid #ff446630;
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.errorClose {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 0.875rem;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+.errorClose:hover { opacity: 1; }
+
+/* ── Song skeleton ── */
+.songSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.skeletonImg {
+  width: 58px;
+  height: 58px;
+  border-radius: 8px;
+  background: var(--surface2);
+  flex-shrink: 0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeletonLines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeletonLine {
+  height: 12px;
+  background: var(--surface2);
+  border-radius: 6px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ── Generate button ── */
+.generateBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border2);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-bottom: 1.5rem;
+}
+
+.generateBtn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: #1db95410;
+  color: var(--accent2);
+}
+
+.generateBtn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}

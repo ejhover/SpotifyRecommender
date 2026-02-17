@@ -1,0 +1,90 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1db95420 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  padding: 3rem 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 24px;
+}
+
+.logo {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-family: var(--font-head);
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2rem;
+  background: var(--accent);
+  color: #000;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-radius: 99px;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 0 0 0 #1db95440;
+}
+
+.btn:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px #1db95440;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.hint {
+  margin-top: 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  opacity: 0.7;
+}
